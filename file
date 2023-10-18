@@ -1,0 +1,47 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+
+using namespace std;
+
+int maxTreasureValue(int N, int SGold, int VGold, int SSilver, int VSilver) {
+    int max_value = 0;
+
+    for (int gold_count = 0; gold_count <= N / SGold; gold_count++) {
+        for (int silver_count = 0; silver_count <= N / SSilver; silver_count++) {
+            if (gold_count * SGold + silver_count * SSilver <= N) {
+                int total_value = gold_count * VGold + silver_count * VSilver;
+                max_value = max(max_value, total_value);
+            }
+        }
+    }
+
+    return max_value;
+}
+
+
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+
+    ifstream inputfile("testni_primer.txt");
+    ofstream outputFile("output.txt");
+
+
+    if (!inputfile) {
+        cerr << "Napaka pri odpiranju vhodne datoteke." << endl;
+        return 1;
+    }
+
+
+    int N, SGold, VGold, SSilver, VSilver; //N size of box, S size, V value
+
+    while (inputfile >> N >> SGold >> VGold >> SSilver >> VSilver) {
+        int result = maxTreasureValue(N, SGold, VGold, SSilver, VSilver);
+        outputFile << result << endl;
+    }
+
+
+    inputfile.close(); // Zaprite datoteko
+
+    return 0;
+}
