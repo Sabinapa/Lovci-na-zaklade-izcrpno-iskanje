@@ -22,9 +22,8 @@ int maxTreasureValue(int N, int SGold, int VGold, int SSilver, int VSilver) {
             if (countGold * SGold + coundSilver * SSilver <= N) { //if we can fit in box
 
                 totalValue = countGold * VGold + coundSilver * VSilver;
-                cout << totalValue << endl;
+                //cout << totalValue << endl;
                 maxValue = max(maxValue, totalValue);
-                cout << totalValue << endl;
             }
         }
     }
@@ -33,12 +32,15 @@ int maxTreasureValue(int N, int SGold, int VGold, int SSilver, int VSilver) {
 }
 
 
-int main() {
+int main(int argc, char *argv[]) {
 
     //cout << "Lovci na zaklade!" << endl;
 
+    const char* vhodna_datoteka = argv[1];
+
+     ifstream inputFile(vhodna_datoteka);
     //ifstream inputFile("testni_primer.txt");
-    ifstream inputFile("primer.txt");
+    //ifstream inputFile("primer.txt");
     ofstream outputFile("output.txt");
 
     if (!inputFile) {
@@ -53,10 +55,11 @@ int main() {
     {
         maximumValue = maxTreasureValue(N, SGold, VGold, SSilver, VSilver);
         outputFile << maximumValue << endl;
+        cout << maximumValue << endl;
     }
 
 
-    inputFile.close(); // Zaprite datoteko
+    inputFile.close(); //Close file
 
     return 0;
 }

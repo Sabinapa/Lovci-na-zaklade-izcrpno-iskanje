@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "vaja1::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-vaja1-Debug-af0a51d5ec58265de227.json",
+					"jsonFile" : "target-vaja1-Debug-61bfb4604ab9680f905c.json",
 					"name" : "vaja1",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/FERI/3-letnik/Algoritmi/vaja1/cmake-build-debug",
-		"source" : "D:/FERI/3-letnik/Algoritmi/vaja1"
+		"build" : "D:/FERI/3_letnik/Algoritmi/vaja1/cmake-build-debug",
+		"source" : "D:/FERI/3_letnik/Algoritmi/vaja1"
 	},
 	"version" : 
 	{
